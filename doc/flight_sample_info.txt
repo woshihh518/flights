@@ -1,0 +1,367 @@
+
+
+	    ({corrInfo:{
+		"MU2452":{correctness:"81%",delay:"19"}
+,"CA1333":{correctness:"78%",delay:"16"}
+,"MU3090":{correctness:"81%",delay:"13"}
+,"MU2458":{correctness:"90%",delay:"5"}
+,"CZ5460":{correctness:"86%",delay:"13"}
+,"CA8215":{correctness:"70%",delay:"20"}
+,"MU2456":{correctness:"48%",delay:"31"}
+,"ZH1915":{correctness:"71%",delay:"21"}
+,"MU2454":{correctness:"56%",delay:"28"}
+,"ZH1333":{correctness:"79%",delay:"15"}
+,"CZ3138":{correctness:"76%",delay:"17"}
+,"SC1341":{correctness:"49%",delay:"27"}
+,"CA984":{correctness:"80%",delay:"14"}
+,"HU7187":{correctness:"85%",delay:"25"}
+,"CA8209":{correctness:"78%",delay:"12"}
+,"SC1475":{correctness:"87%",delay:"8"}
+,"MU3089":{correctness:"81%",delay:"13"}
+,"ZH1475":{correctness:"86%",delay:"9"}
+,"ZH1873":{correctness:"65%",delay:"24"}
+,"MU3088":{correctness:"91%",delay:"10"}
+,"CA1341":{correctness:"49%",delay:"27"}
+,"CZ6605":{correctness:"91%",delay:"13"}
+,"MU2460":{correctness:"89%",delay:"10"}
+,"CZ5454":{correctness:"60%",delay:"25"}
+,"CA1873":{correctness:"64%",delay:"25"}
+,"MU2462":{correctness:"88%",delay:"5"}
+,"CZ5456":{correctness:"48%",delay:"30"}
+,"CZ6586":{correctness:"90%",delay:"5"}
+,"US5354":{correctness:"100%",delay:"5"}
+,"CZ5452":{correctness:"80%",delay:"16"}
+,"CA8205":{correctness:"61%",delay:"36"}
+,"ZH1909":{correctness:"80%",delay:"10"}
+,"CA1475":{correctness:"87%",delay:"10"}
+,"ZH1905":{correctness:"65%",delay:"27"}
+,"CZ3118":{correctness:"90%",delay:"12"}
+,"ZH1341":{correctness:"56%",delay:"25"}
+,"CZ3168":{correctness:"88%",delay:"18"}
+,"CZ3140":{correctness:"81%",delay:"13"}
+	
+		},
+ extInfo : {
+	
+		"CA8205":{
+		ml:"false",
+		sp:"0",
+		cs:"",
+		et:"true",
+		ps:false,
+		hot:false,
+		fdt:"2小时5分钟",
+		fot:"140",
+		acf:"50",	
+		lcc:false,
+		sc : {full : "1133",dis : "4"  },   
+	    zj : {url : 'http://airchina.travelsky.com/cab2c/getOckiConfig.do',info : "本航班支持网上值机，航班起飞前36小时即可办理北京始发国航实际运营国内航班的乘机手续，航班起飞前2小时停止办理。请您不晚于航班起飞前20分钟到达指定登机口登机。国际航班国内段暂不办理。" }}
+		,
+		"SC1341":{
+		ml:"true",
+		sp:"0",
+		cs:"CA1341",
+		et:"true",
+		ps:false,
+		hot:false,
+		fdt:"2小时0分钟",
+		fot:"140",
+		acf:"50",	
+		lcc:false,
+		sc : {full : "1133",dis : "4"  },   
+	    zj : {url : 'http://www.shandongair.com.cn/web/shair_zh/',info : "本航班支持网上值机，每日13:00后可办理次日所有北京始发国内航班的乘机手续，航班起飞前2小时停止办理。" }}
+		,
+		"CZ3118":{
+		ml:"true",
+		sp:"0",
+		cs:"",
+		et:"true",
+		ps:false,
+		hot:false,
+		fdt:"2小时15分钟",
+		fot:"140",
+		acf:"50",	
+		lcc:false,
+		sc : {full : "1133",dis : "4.5"  },   
+	    zj : {url : 'http://airport.csair.com/cki/app',info : "本航班支持网上值机，航班预计起飞前1天14:00开始至航班预计起飞时间前60分钟。请于航空公司网站办理网上值机。" }}
+		,
+		"ZH1915":{
+		ml:"true",
+		sp:"0",
+		cs:"CA8215",
+		et:"true",
+		ps:false,
+		hot:false,
+		fdt:"2小时5分钟",
+		fot:"140",
+		acf:"50",	
+		lcc:false,
+		sc : {full : "1133",dis : "4.5"  },   
+	    zj : {url : '',info : "" }}
+		,
+		"ZH1905":{
+		ml:"true",
+		sp:"0",
+		cs:"CA8205",
+		et:"true",
+		ps:false,
+		hot:false,
+		fdt:"2小时5分钟",
+		fot:"140",
+		acf:"50",	
+		lcc:false,
+		sc : {full : "1133",dis : "4.5"  },   
+	    zj : {url : '',info : "" }}
+		,
+		"ZH1909":{
+		ml:"true",
+		sp:"0",
+		cs:"CA8209",
+		et:"true",
+		ps:false,
+		hot:false,
+		fdt:"2小时5分钟",
+		fot:"140",
+		acf:"50",	
+		lcc:false,
+		sc : {full : "1133",dis : "4.5"  },   
+	    zj : {url : '',info : "" }}
+		,
+		"ZH1341":{
+		ml:"true",
+		sp:"0",
+		cs:"CA1341",
+		et:"true",
+		ps:false,
+		hot:false,
+		fdt:"2小时0分钟",
+		fot:"140",
+		acf:"50",	
+		lcc:false,
+		sc : {full : "1133",dis : "4.5"  },   
+	    zj : {url : '',info : "" }}
+		,
+		"MU2454":{
+		ml:"true",
+		sp:"0",
+		cs:"",
+		et:"true",
+		ps:false,
+		hot:true,
+		fdt:"2小时0分钟",
+		fot:"140",
+		acf:"50",	
+		lcc:false,
+		sc : {full : "1416",dis : "3"  },   
+	    zj : {url : 'http://mu.travelsky.com/mub2c/Cuss/cusshelp.html',info : "本航班支持网上值机，航班起飞前一天16:00到航班起飞前2小时，请于北京首都国际机场2号航站楼/值机H岛13号柜台办理。" }}
+		,
+		"SC1475":{
+		ml:"true",
+		sp:"0",
+		cs:"CA1475",
+		et:"true",
+		ps:false,
+		hot:false,
+		fdt:"2小时5分钟",
+		fot:"140",
+		acf:"50",	
+		lcc:false,
+		sc : {full : "1133",dis : "4"  },   
+	    zj : {url : 'http://www.shandongair.com.cn/web/shair_zh/',info : "本航班支持网上值机，每日13:00后可办理次日所有北京始发国内航班的乘机手续，航班起飞前2小时停止办理。" }}
+		,
+		"HU7187":{
+		ml:"false",
+		sp:"0",
+		cs:"",
+		et:"true",
+		ps:false,
+		hot:true,
+		fdt:"2小时5分钟",
+		fot:"140",
+		acf:"50",	
+		lcc:false,
+		sc : {full : "1416",dis : "4"  },   
+	    zj : {url : 'http://www.hnair.com/hnairweb/FrameMain/wfmMainReady.aspx?strHref=1',info : "本航班支持网上值机，每日12:00后可办理次日北京始发国内航班的乘机手续，航班起飞前2小时停止办理。" }}
+		,
+		"CA984":{
+		ml:"false",
+		sp:"0",
+		cs:"",
+		et:"true",
+		ps:false,
+		hot:false,
+		fdt:"2小时5分钟",
+		fot:"140",
+		acf:"50",	
+		lcc:false,
+		sc : {full : "1133",dis : "4"  },   
+	    zj : {url : 'http://airchina.travelsky.com/cab2c/getOckiConfig.do',info : "本航班支持网上值机，航班起飞前36小时即可办理北京始发国航实际运营国内航班的乘机手续，航班起飞前2小时停止办理。请您不晚于航班起飞前20分钟到达指定登机口登机。国际航班国内段暂不办理。" }}
+		,
+		"MU2460":{
+		ml:"true",
+		sp:"0",
+		cs:"",
+		et:"true",
+		ps:false,
+		hot:true,
+		fdt:"2小时10分钟",
+		fot:"140",
+		acf:"50",	
+		lcc:false,
+		sc : {full : "1416",dis : "3"  },   
+	    zj : {url : 'http://mu.travelsky.com/mub2c/Cuss/cusshelp.html',info : "本航班支持网上值机，航班起飞前一天16:00到航班起飞前2小时，请于北京首都国际机场2号航站楼/值机H岛13号柜台办理。" }}
+		,
+		"CA1873":{
+		ml:"false",
+		sp:"0",
+		cs:"",
+		et:"true",
+		ps:false,
+		hot:false,
+		fdt:"1小时55分钟",
+		fot:"140",
+		acf:"50",	
+		lcc:false,
+		sc : {full : "1133",dis : "4"  },   
+	    zj : {url : 'http://airchina.travelsky.com/cab2c/getOckiConfig.do',info : "本航班支持网上值机，航班起飞前36小时即可办理北京始发国航实际运营国内航班的乘机手续，航班起飞前2小时停止办理。请您不晚于航班起飞前20分钟到达指定登机口登机。国际航班国内段暂不办理。" }}
+		,
+		"CZ3140":{
+		ml:"true",
+		sp:"0",
+		cs:"",
+		et:"true",
+		ps:false,
+		hot:false,
+		fdt:"2小时10分钟",
+		fot:"140",
+		acf:"50",	
+		lcc:false,
+		sc : {full : "1133",dis : "4.5"  },   
+	    zj : {url : 'http://airport.csair.com/cki/app',info : "本航班支持网上值机，航班预计起飞前1天14:00开始至航班预计起飞时间前60分钟。请于航空公司网站办理网上值机。" }}
+		,
+		"ZH1873":{
+		ml:"true",
+		sp:"0",
+		cs:"CA1873",
+		et:"true",
+		ps:false,
+		hot:false,
+		fdt:"1小时55分钟",
+		fot:"140",
+		acf:"50",	
+		lcc:false,
+		sc : {full : "1133",dis : "4.5"  },   
+	    zj : {url : '',info : "" }}
+		,
+		"CA1341":{
+		ml:"true",
+		sp:"0",
+		cs:"",
+		et:"true",
+		ps:false,
+		hot:false,
+		fdt:"2小时0分钟",
+		fot:"140",
+		acf:"50",	
+		lcc:false,
+		sc : {full : "1133",dis : "4"  },   
+	    zj : {url : 'http://airchina.travelsky.com/cab2c/getOckiConfig.do',info : "本航班支持网上值机，航班起飞前36小时即可办理北京始发国航实际运营国内航班的乘机手续，航班起飞前2小时停止办理。请您不晚于航班起飞前20分钟到达指定登机口登机。国际航班国内段暂不办理。" }}
+		,
+		"MU2452":{
+		ml:"true",
+		sp:"0",
+		cs:"",
+		et:"true",
+		ps:false,
+		hot:false,
+		fdt:"2小时10分钟",
+		fot:"140",
+		acf:"50",	
+		lcc:false,
+		sc : {full : "1416",dis : "3"  },   
+	    zj : {url : 'http://mu.travelsky.com/mub2c/Cuss/cusshelp.html',info : "本航班支持网上值机，航班起飞前一天16:00到航班起飞前2小时，请于北京首都国际机场2号航站楼/值机H岛13号柜台办理。" }}
+		,
+		"CA8209":{
+		ml:"false",
+		sp:"0",
+		cs:"",
+		et:"true",
+		ps:false,
+		hot:false,
+		fdt:"2小时5分钟",
+		fot:"140",
+		acf:"50",	
+		lcc:false,
+		sc : {full : "1133",dis : "4"  },   
+	    zj : {url : 'http://airchina.travelsky.com/cab2c/getOckiConfig.do',info : "本航班支持网上值机，航班起飞前36小时即可办理北京始发国航实际运营国内航班的乘机手续，航班起飞前2小时停止办理。请您不晚于航班起飞前20分钟到达指定登机口登机。国际航班国内段暂不办理。" }}
+		,
+		"MU2456":{
+		ml:"false",
+		sp:"0",
+		cs:"",
+		et:"true",
+		ps:false,
+		hot:false,
+		fdt:"2小时10分钟",
+		fot:"140",
+		acf:"50",	
+		lcc:false,
+		sc : {full : "1416",dis : "3"  },   
+	    zj : {url : 'http://mu.travelsky.com/mub2c/Cuss/cusshelp.html',info : "本航班支持网上值机，航班起飞前一天16:00到航班起飞前2小时，请于北京首都国际机场2号航站楼/值机H岛13号柜台办理。" }}
+		,
+		"CZ6399":{
+		ml:"true",
+		sp:"0",
+		cs:"",
+		et:"true",
+		ps:false,
+		hot:false,
+		fdt:"2小时20分钟",
+		fot:"140",
+		acf:"50",	
+		lcc:false,
+		sc : {full : "1133",dis : "4.5"  },   
+	    zj : {url : 'http://airport.csair.com/cki/app',info : "本航班支持网上值机，航班预计起飞前1天14:00开始至航班预计起飞时间前60分钟。请于航空公司网站办理网上值机。" }}
+		,
+		"ZH1475":{
+		ml:"true",
+		sp:"0",
+		cs:"CA1475",
+		et:"true",
+		ps:false,
+		hot:false,
+		fdt:"2小时5分钟",
+		fot:"140",
+		acf:"50",	
+		lcc:false,
+		sc : {full : "1133",dis : "4.5"  },   
+	    zj : {url : '',info : "" }}
+		,
+		"CA8215":{
+		ml:"false",
+		sp:"0",
+		cs:"",
+		et:"true",
+		ps:false,
+		hot:false,
+		fdt:"2小时5分钟",
+		fot:"140",
+		acf:"50",	
+		lcc:false,
+		sc : {full : "1133",dis : "4"  },   
+	    zj : {url : 'http://airchina.travelsky.com/cab2c/getOckiConfig.do',info : "本航班支持网上值机，航班起飞前36小时即可办理北京始发国航实际运营国内航班的乘机手续，航班起飞前2小时停止办理。请您不晚于航班起飞前20分钟到达指定登机口登机。国际航班国内段暂不办理。" }}
+		,
+		"CA1475":{
+		ml:"false",
+		sp:"0",
+		cs:"",
+		et:"true",
+		ps:false,
+		hot:false,
+		fdt:"2小时5分钟",
+		fot:"140",
+		acf:"50",	
+		lcc:false,
+		sc : {full : "1133",dis : "4"  },   
+	    zj : {url : 'http://airchina.travelsky.com/cab2c/getOckiConfig.do',info : "本航班支持网上值机，航班起飞前36小时即可办理北京始发国航实际运营国内航班的乘机手续，航班起飞前2小时停止办理。请您不晚于航班起飞前20分钟到达指定登机口登机。国际航班国内段暂不办理。" }}
+		  }})

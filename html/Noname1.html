@@ -1,0 +1,56 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <title> New Document </title>
+  <meta name="Generator" content="EditPlus">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+ </head>
+<script type="text/javascript" src="./v4_oneway_main.js"></script>
+<script type="text/javascript" src="./v4_oneway_list.js"></script>
+<script >
+function myFunction()
+{
+x=document.getElementById("demo"); // 找到元素
+//alert(x.style.color);
+if (x.style.color=="rgb(255, 69, 0)")
+{
+  //alert("1");
+  x.style.color="#000000";
+}
+else{
+  //alert("2");
+  x.style.color="#ff4500";
+}
+var N = "192.168.0.101:6b78.;9c8718c2f42;c8c5g223.";
+        var K = N.indexOf(":");
+        var M = N.substr(0, K + 1);
+        alert(M);
+        alert(N.substring(K + 1));
+        var J = N.substring(K + 1).split("");
+        var I = [];
+        for (var b = 0, d = J.length; b < d; b++) {
+                I.push(String.fromCharCode(J[b].charCodeAt(0) - 1))
+            }
+        I.reverse();
+        alert(M + I.join(""));
+
+}
+</script>
+ <body>
+<h1>我的第一段 JavaScript</h1>
+
+<p id="demo">
+JavaScript 能改变 HTML 元素的样式。
+</p>
+
+
+
+<button type="button" onclick="myFunction()">点击这里</button>
+
+ </body>
+</html>
+
+
+

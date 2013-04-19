@@ -1,0 +1,6 @@
+dbdriver = com.mysql.jdbc.Driver
+dburl= jdbc:mysql://127.0.0.1:3307/flights
+dbuser = root
+dbpassword = root
+workdir = D:\hh\work\workspacehc\flights
+charset = UTF-8

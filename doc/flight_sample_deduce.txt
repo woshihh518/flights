@@ -1,0 +1,1009 @@
+
+({
+  "totalVendor": 487,
+  "recommendInfo": {},
+  "carrierInfo": {
+    "CZ": {
+      "zh": "南方航空",
+      "full": "中国南方航空公司",
+      "maxvendors": 18,
+      "key": "CZ"
+    },
+    "SC": {
+      "zh": "山东航空",
+      "full": "中国山东航空公司",
+      "maxvendors": 18,
+      "key": "SC"
+    },
+    "MU": {
+      "zh": "东方航空",
+      "full": "中国东方航空公司",
+      "maxvendors": 18,
+      "key": "MU"
+    },
+    "ZH": {
+      "zh": "深圳航空",
+      "full": "中国深圳航空公司",
+      "maxvendors": 18,
+      "key": "ZH"
+    },
+    "CA": {
+      "zh": "中国国航",
+      "full": "中国国际航空公司",
+      "maxvendors": 18,
+      "key": "CA"
+    },
+    "HU": {
+      "zh": "海南航空",
+      "full": "中国海南航空公司",
+      "maxvendors": 18,
+      "key": "HU"
+    }
+  },
+  "flightInfo": {
+    "CA8210|2013-05-17": {
+      "dt": "18:35",
+      "da": "WUH",
+      "hp": [
+        "",
+        ""
+      ],
+      "ca": "CA",
+      "at": "20:35",
+      "dd": "2013-05-17",
+      "arrtower": "T3",
+      "co": "CA8210",
+      "t": "T2",
+      "pt": "320",
+      "aa": "PEK",
+      "src": "AV",
+      "dpttower": "T2"
+    },
+    "CZ5453|2013-05-17": {
+      "dt": "15:00",
+      "da": "WUH",
+      "hp": [
+        "",
+        ""
+      ],
+      "ca": "CZ",
+      "at": "17:15",
+      "dd": "2013-05-17",
+      "arrtower": "T2",
+      "co": "CZ5453",
+      "t": "T2",
+      "pt": "738",
+      "aa": "PEK",
+      "src": "AV",
+      "dpttower": "T2"
+    },
+    "MU2459|2013-05-17": {
+      "dt": "19:30",
+      "da": "WUH",
+      "hp": [
+        "",
+        ""
+      ],
+      "ca": "MU",
+      "at": "21:30",
+      "dd": "2013-05-17",
+      "arrtower": "T2",
+      "co": "MU2459",
+      "t": "T2",
+      "pt": "733",
+      "aa": "PEK",
+      "src": "AV",
+      "dpttower": "T2"
+    },
+    "ZH1342|2013-05-17": {
+      "dt": "08:25",
+      "da": "WUH",
+      "hp": [
+        "",
+        ""
+      ],
+      "ca": "ZH",
+      "at": "10:20",
+      "dd": "2013-05-17",
+      "arrtower": "T3",
+      "co": "ZH1342",
+      "t": "T2",
+      "pt": "320",
+      "aa": "PEK",
+      "src": "AV",
+      "dpttower": "T2"
+    },
+    "CZ3139|2013-05-17": {
+      "dt": "16:00",
+      "da": "WUH",
+      "hp": [
+        "",
+        ""
+      ],
+      "ca": "CZ",
+      "at": "18:05",
+      "dd": "2013-05-17",
+      "arrtower": "T2",
+      "co": "CZ3139",
+      "t": "T2",
+      "pt": "738",
+      "aa": "PEK",
+      "src": "AV",
+      "dpttower": "T2"
+    },
+    "ZH1334|2013-05-17": {
+      "dt": "10:35",
+      "da": "WUH",
+      "hp": [
+        "",
+        ""
+      ],
+      "ca": "ZH",
+      "at": "12:35",
+      "dd": "2013-05-17",
+      "arrtower": "T3",
+      "co": "ZH1334",
+      "t": "T2",
+      "pt": "738",
+      "aa": "PEK",
+      "src": "AV",
+      "dpttower": "T2"
+    },
+    "ZH4606|2013-05-17": {
+      "dt": "18:35",
+      "da": "WUH",
+      "hp": [
+        "",
+        ""
+      ],
+      "ca": "ZH",
+      "at": "20:35",
+      "dd": "2013-05-17",
+      "arrtower": "T3",
+      "co": "ZH4606",
+      "t": "T2",
+      "pt": "320",
+      "aa": "PEK",
+      "src": "AV",
+      "dpttower": "T2"
+    },
+    "CA1334|2013-05-17": {
+      "dt": "10:35",
+      "da": "WUH",
+      "hp": [
+        "",
+        ""
+      ],
+      "ca": "CA",
+      "at": "12:35",
+      "dd": "2013-05-17",
+      "arrtower": "T3",
+      "co": "CA1334",
+      "t": "T2",
+      "pt": "738",
+      "aa": "PEK",
+      "src": "AV",
+      "dpttower": "T2"
+    },
+    "ZH1983|2013-05-17": {
+      "dt": "16:35",
+      "da": "WUH",
+      "hp": [
+        "",
+        ""
+      ],
+      "ca": "ZH",
+      "at": "18:35",
+      "dd": "2013-05-17",
+      "arrtower": "T3",
+      "co": "ZH1983",
+      "t": "T2",
+      "pt": "738",
+      "aa": "PEK",
+      "src": "AV",
+      "dpttower": "T2"
+    },
+    "ZH4602|2013-05-17": {
+      "dt": "20:35",
+      "da": "WUH",
+      "hp": [
+        "",
+        ""
+      ],
+      "ca": "ZH",
+      "at": "22:25",
+      "dd": "2013-05-17",
+      "arrtower": "T3",
+      "co": "ZH4602",
+      "t": "T2",
+      "pt": "320",
+      "aa": "PEK",
+      "src": "AV",
+      "dpttower": "T2"
+    },
+    "CA1342|2013-05-17": {
+      "dt": "08:25",
+      "da": "WUH",
+      "hp": [
+        "",
+        ""
+      ],
+      "ca": "CA",
+      "at": "10:20",
+      "dd": "2013-05-17",
+      "arrtower": "T3",
+      "co": "CA1342",
+      "t": "T2",
+      "pt": "320",
+      "aa": "PEK",
+      "src": "AV",
+      "dpttower": "T2"
+    },
+    "ZH4608|2013-05-17": {
+      "dt": "12:25",
+      "da": "WUH",
+      "hp": [
+        "",
+        ""
+      ],
+      "ca": "ZH",
+      "at": "14:25",
+      "dd": "2013-05-17",
+      "arrtower": "T3",
+      "co": "ZH4608",
+      "t": "T2",
+      "pt": "320",
+      "aa": "PEK",
+      "src": "AV",
+      "dpttower": "T2"
+    },
+    "MU2455|2013-05-17": {
+      "dt": "18:00",
+      "da": "WUH",
+      "hp": [
+        "",
+        ""
+      ],
+      "ca": "MU",
+      "at": "19:55",
+      "dd": "2013-05-17",
+      "arrtower": "T2",
+      "co": "MU2455",
+      "t": "T2",
+      "pt": "738",
+      "aa": "PEK",
+      "src": "AV",
+      "dpttower": "T2"
+    },
+    "MU3003|2013-05-17": {
+      "dt": "07:50",
+      "da": "WUH",
+      "hp": [
+        "",
+        ""
+      ],
+      "ca": "MU",
+      "at": "09:40",
+      "dd": "2013-05-17",
+      "arrtower": "T2",
+      "co": "MU3003",
+      "t": "T2",
+      "pt": "738",
+      "aa": "PEK",
+      "src": "AV",
+      "dpttower": "T2"
+    },
+    "CA8216|2013-05-17": {
+      "dt": "12:25",
+      "da": "WUH",
+      "hp": [
+        "",
+        ""
+      ],
+      "ca": "CA",
+      "at": "14:25",
+      "dd": "2013-05-17",
+      "arrtower": "T3",
+      "co": "CA8216",
+      "t": "T2",
+      "pt": "320",
+      "aa": "PEK",
+      "src": "AV",
+      "dpttower": "T2"
+    },
+    "CZ6400|2013-05-17": {
+      "dt": "11:00",
+      "da": "WUH",
+      "hp": [
+        "",
+        ""
+      ],
+      "ca": "CZ",
+      "at": "12:55",
+      "dd": "2013-05-17",
+      "arrtower": "T2",
+      "co": "CZ6400",
+      "t": "T2",
+      "pt": "332",
+      "aa": "PEK",
+      "src": "AV",
+      "dpttower": "T2"
+    },
+    "SC1342|2013-05-17": {
+      "dt": "08:25",
+      "da": "WUH",
+      "hp": [
+        "",
+        ""
+      ],
+      "ca": "SC",
+      "at": "10:20",
+      "dd": "2013-05-17",
+      "arrtower": "T3",
+      "co": "SC1342",
+      "t": "T2",
+      "pt": "320",
+      "aa": "PEK",
+      "src": "AV",
+      "dpttower": "T2"
+    },
+    "CZ3117|2013-05-17": {
+      "dt": "07:50",
+      "da": "WUH",
+      "hp": [
+        "",
+        ""
+      ],
+      "ca": "CZ",
+      "at": "09:40",
+      "dd": "2013-05-17",
+      "arrtower": "T2",
+      "co": "CZ3117",
+      "t": "T2",
+      "pt": "738",
+      "aa": "PEK",
+      "src": "AV",
+      "dpttower": "T2"
+    },
+    "HU7188|2013-05-17": {
+      "dt": "18:05",
+      "da": "WUH",
+      "hp": [
+        "",
+        ""
+      ],
+      "ca": "HU",
+      "at": "20:00",
+      "dd": "2013-05-17",
+      "arrtower": "T1",
+      "co": "HU7188",
+      "t": "T2",
+      "pt": "738",
+      "aa": "PEK",
+      "src": "AV",
+      "dpttower": "T2"
+    },
+    "MU2453|2013-05-17": {
+      "dt": "15:00",
+      "da": "WUH",
+      "hp": [
+        "",
+        ""
+      ],
+      "ca": "MU",
+      "at": "17:15",
+      "dd": "2013-05-17",
+      "arrtower": "T2",
+      "co": "MU2453",
+      "t": "T2",
+      "pt": "738",
+      "aa": "PEK",
+      "src": "AV",
+      "dpttower": "T2"
+    },
+    "CZ5455|2013-05-17": {
+      "dt": "18:00",
+      "da": "WUH",
+      "hp": [
+        "",
+        ""
+      ],
+      "ca": "CZ",
+      "at": "19:55",
+      "dd": "2013-05-17",
+      "arrtower": "T2",
+      "co": "CZ5455",
+      "t": "T2",
+      "pt": "738",
+      "aa": "PEK",
+      "src": "AV",
+      "dpttower": "T2"
+    },
+    "CA8206|2013-05-17": {
+      "dt": "20:35",
+      "da": "WUH",
+      "hp": [
+        "",
+        ""
+      ],
+      "ca": "CA",
+      "at": "22:25",
+      "dd": "2013-05-17",
+      "arrtower": "T3",
+      "co": "CA8206",
+      "t": "T2",
+      "pt": "320",
+      "aa": "PEK",
+      "src": "AV",
+      "dpttower": "T2"
+    },
+    "ZH1476|2013-05-17": {
+      "dt": "14:25",
+      "da": "WUH",
+      "hp": [
+        "",
+        ""
+      ],
+      "ca": "ZH",
+      "at": "16:25",
+      "dd": "2013-05-17",
+      "arrtower": "T3",
+      "co": "ZH1476",
+      "t": "T2",
+      "pt": "320",
+      "aa": "PEK",
+      "src": "AV",
+      "dpttower": "T2"
+    },
+    "MU2451|2013-05-17": {
+      "dt": "09:00",
+      "da": "WUH",
+      "hp": [
+        "",
+        ""
+      ],
+      "ca": "MU",
+      "at": "10:40",
+      "dd": "2013-05-17",
+      "arrtower": "T2",
+      "co": "MU2451",
+      "t": "T2",
+      "pt": "738",
+      "aa": "PEK",
+      "src": "AV",
+      "dpttower": "T2"
+    },
+    "SC1476|2013-05-17": {
+      "dt": "14:25",
+      "da": "WUH",
+      "hp": [
+        "",
+        ""
+      ],
+      "ca": "SC",
+      "at": "16:25",
+      "dd": "2013-05-17",
+      "arrtower": "T3",
+      "co": "SC1476",
+      "t": "T2",
+      "pt": "320",
+      "aa": "PEK",
+      "src": "AV",
+      "dpttower": "T2"
+    },
+    "CZ5451|2013-05-17": {
+      "dt": "09:00",
+      "da": "WUH",
+      "hp": [
+        "",
+        ""
+      ],
+      "ca": "CZ",
+      "at": "10:40",
+      "dd": "2013-05-17",
+      "arrtower": "T2",
+      "co": "CZ5451",
+      "t": "T2",
+      "pt": "738",
+      "aa": "PEK",
+      "src": "AV",
+      "dpttower": "T2"
+    },
+    "CA1476|2013-05-17": {
+      "dt": "14:25",
+      "da": "WUH",
+      "hp": [
+        "",
+        ""
+      ],
+      "ca": "CA",
+      "at": "16:25",
+      "dd": "2013-05-17",
+      "arrtower": "T3",
+      "co": "CA1476",
+      "t": "T2",
+      "pt": "320",
+      "aa": "PEK",
+      "src": "AV",
+      "dpttower": "T2"
+    },
+    "CA983|2013-05-17": {
+      "dt": "16:35",
+      "da": "WUH",
+      "hp": [
+        "",
+        ""
+      ],
+      "ca": "CA",
+      "at": "18:35",
+      "dd": "2013-05-17",
+      "arrtower": "T3",
+      "co": "CA983",
+      "t": "T2",
+      "pt": "738",
+      "aa": "PEK",
+      "src": "AV",
+      "dpttower": "T2"
+    },
+    "MU3093|2013-05-17": {
+      "dt": "16:00",
+      "da": "WUH",
+      "hp": [
+        "",
+        ""
+      ],
+      "ca": "MU",
+      "at": "18:05",
+      "dd": "2013-05-17",
+      "arrtower": "T2",
+      "co": "MU3093",
+      "t": "T2",
+      "pt": "738",
+      "aa": "PEK",
+      "src": "AV",
+      "dpttower": "T2"
+    }
+  },
+  "desc": "192.168.0.176",
+  "timeStamp": "",
+  "invokeInterval": 500,
+  "status": 1366175784175,
+  "priceData": {},
+  "planeInfo": {
+    "738": {
+      "full": "波音737(中)",
+      "type": ["中型机"],
+      "key": "738"
+    },
+    "332": {
+      "full": "空客330(宽体机)",
+      "type": ["大型机"],
+      "key": "332"
+    },
+    "320": {
+      "full": "空客320(中)",
+      "type": ["中型机"],
+      "key": "320"
+    },
+    "733": {
+      "full": "波音737(中)",
+      "type": ["中型机"],
+      "key": "733"
+    }
+  },
+  "dataCompleted": false,
+  "statusMap": 144,
+  "priceCount": 1106,
+  "priceInfo": {
+    "CA8210|2013-05-17": {
+      "cabin": "Y",
+      "op": 1080,
+      "tc": "经济舱",
+      "slowpr": 100000,
+      "bfhipr": 0,
+      "hipr": 0,
+      "wrlen": 57,
+      "shipr": 0,
+      "bfwrlen": 0,
+      "swrlen": 0,
+      "bflowpr": 100000,
+      "lowpr": 947
+    },
+    "CZ5453|2013-05-17": {
+      "cabin": "Y",
+      "op": 1080,
+      "tc": "经济舱",
+      "slowpr": 100000,
+      "bfhipr": 0,
+      "hipr": 0,
+      "wrlen": 20,
+      "shipr": 0,
+      "bfwrlen": 0,
+      "swrlen": 0,
+      "bflowpr": 100000,
+      "lowpr": 998
+    },
+    "MU2459|2013-05-17": {
+      "cabin": "M",
+      "op": 1080,
+      "tc": "经济舱",
+      "slowpr": 100000,
+      "bfhipr": 0,
+      "hipr": 0,
+      "wrlen": 68,
+      "shipr": 0,
+      "bfwrlen": 0,
+      "swrlen": 0,
+      "bflowpr": 100000,
+      "lowpr": 650
+    },
+    "ZH1342|2013-05-17": {
+      "cabin": "L",
+      "op": 1080,
+      "tc": "经济舱",
+      "slowpr": 100000,
+      "bfhipr": 0,
+      "hipr": 0,
+      "wrlen": 18,
+      "shipr": 0,
+      "bfwrlen": 0,
+      "swrlen": 0,
+      "bflowpr": 100000,
+      "lowpr": 699
+    },
+    "CZ3139|2013-05-17": {
+      "cabin": "H",
+      "op": 1080,
+      "tc": "经济舱",
+      "slowpr": 100000,
+      "bfhipr": 0,
+      "hipr": 0,
+      "wrlen": 49,
+      "shipr": 0,
+      "bfwrlen": 0,
+      "swrlen": 0,
+      "bflowpr": 100000,
+      "lowpr": 778
+    },
+    "ZH1334|2013-05-17": {
+      "cabin": "Y",
+      "op": 1080,
+      "tc": "经济舱",
+      "slowpr": 100000,
+      "bfhipr": 0,
+      "hipr": 0,
+      "wrlen": 18,
+      "shipr": 0,
+      "bfwrlen": 0,
+      "swrlen": 0,
+      "bflowpr": 100000,
+      "lowpr": 1003
+    },
+    "ZH4606|2013-05-17": {
+      "cabin": "Y",
+      "op": 1080,
+      "tc": "经济舱",
+      "slowpr": 100000,
+      "bfhipr": 0,
+      "hipr": 0,
+      "wrlen": 17,
+      "shipr": 0,
+      "bfwrlen": 0,
+      "swrlen": 0,
+      "bflowpr": 100000,
+      "lowpr": 1003
+    },
+    "CA1334|2013-05-17": {
+      "cabin": "Y",
+      "op": 1080,
+      "tc": "经济舱",
+      "slowpr": 100000,
+      "bfhipr": 0,
+      "hipr": 0,
+      "wrlen": 56,
+      "shipr": 0,
+      "bfwrlen": 0,
+      "swrlen": 0,
+      "bflowpr": 100000,
+      "lowpr": 947
+    },
+    "ZH1983|2013-05-17": {
+      "cabin": "Y",
+      "op": 1080,
+      "tc": "经济舱",
+      "slowpr": 100000,
+      "bfhipr": 0,
+      "hipr": 0,
+      "wrlen": 17,
+      "shipr": 0,
+      "bfwrlen": 0,
+      "swrlen": 0,
+      "bflowpr": 100000,
+      "lowpr": 1003
+    },
+    "ZH4602|2013-05-17": {
+      "cabin": "Y",
+      "op": 1080,
+      "tc": "经济舱",
+      "slowpr": 100000,
+      "bfhipr": 0,
+      "hipr": 0,
+      "wrlen": 17,
+      "shipr": 0,
+      "bfwrlen": 0,
+      "swrlen": 0,
+      "bflowpr": 100000,
+      "lowpr": 1003
+    },
+    "CA1342|2013-05-17": {
+      "cabin": "L",
+      "op": 1080,
+      "tc": "经济舱",
+      "slowpr": 100000,
+      "bfhipr": 0,
+      "hipr": 0,
+      "wrlen": 61,
+      "shipr": 0,
+      "bfwrlen": 0,
+      "swrlen": 0,
+      "bflowpr": 100000,
+      "lowpr": 619
+    },
+    "ZH4608|2013-05-17": {
+      "cabin": "Y",
+      "op": 1080,
+      "tc": "经济舱",
+      "slowpr": 100000,
+      "bfhipr": 0,
+      "hipr": 0,
+      "wrlen": 17,
+      "shipr": 0,
+      "bfwrlen": 0,
+      "swrlen": 0,
+      "bflowpr": 100000,
+      "lowpr": 1003
+    },
+    "MU2455|2013-05-17": {
+      "cabin": "H",
+      "op": 1080,
+      "tc": "经济舱",
+      "slowpr": 100000,
+      "bfhipr": 0,
+      "hipr": 0,
+      "wrlen": 68,
+      "shipr": 0,
+      "bfwrlen": 0,
+      "swrlen": 0,
+      "bflowpr": 100000,
+      "lowpr": 715
+    },
+    "MU3003|2013-05-17": {
+      "cabin": "V",
+      "op": 1080,
+      "tc": "经济舱",
+      "slowpr": 100000,
+      "bfhipr": 0,
+      "hipr": 0,
+      "wrlen": 18,
+      "shipr": 0,
+      "bfwrlen": 0,
+      "swrlen": 0,
+      "bflowpr": 100000,
+      "lowpr": 492
+    },
+    "CA8216|2013-05-17": {
+      "cabin": "Y",
+      "op": 1080,
+      "tc": "经济舱",
+      "slowpr": 100000,
+      "bfhipr": 0,
+      "hipr": 0,
+      "wrlen": 57,
+      "shipr": 0,
+      "bfwrlen": 0,
+      "swrlen": 0,
+      "bflowpr": 100000,
+      "lowpr": 947
+    },
+    "CZ6400|2013-05-17": {
+      "cabin": "E",
+      "op": 1080,
+      "tc": "经济舱",
+      "slowpr": 100000,
+      "bfhipr": 0,
+      "hipr": 0,
+      "wrlen": 51,
+      "shipr": 0,
+      "bfwrlen": 0,
+      "swrlen": 0,
+      "bflowpr": 100000,
+      "lowpr": 489
+    },
+    "SC1342|2013-05-17": {
+      "cabin": "L",
+      "op": 1080,
+      "tc": "经济舱",
+      "slowpr": 100000,
+      "bfhipr": 0,
+      "hipr": 0,
+      "wrlen": 17,
+      "shipr": 0,
+      "bfwrlen": 0,
+      "swrlen": 0,
+      "bflowpr": 100000,
+      "lowpr": 699
+    },
+    "CZ3117|2013-05-17": {
+      "cabin": "E",
+      "op": 1080,
+      "tc": "经济舱",
+      "slowpr": 100000,
+      "bfhipr": 0,
+      "hipr": 0,
+      "wrlen": 51,
+      "shipr": 0,
+      "bfwrlen": 0,
+      "swrlen": 0,
+      "bflowpr": 100000,
+      "lowpr": 489
+    },
+    "HU7188|2013-05-17": {
+      "cabin": "K",
+      "op": 1080,
+      "tc": "经济舱",
+      "slowpr": 100000,
+      "bfhipr": 0,
+      "hipr": 0,
+      "wrlen": 29,
+      "shipr": 0,
+      "bfwrlen": 0,
+      "swrlen": 0,
+      "bflowpr": 100000,
+      "lowpr": 773
+    },
+    "MU2453|2013-05-17": {
+      "cabin": "Y",
+      "op": 1080,
+      "tc": "经济舱",
+      "slowpr": 100000,
+      "bfhipr": 0,
+      "hipr": 0,
+      "wrlen": 67,
+      "shipr": 0,
+      "bfwrlen": 0,
+      "swrlen": 0,
+      "bflowpr": 100000,
+      "lowpr": 887
+    },
+    "CZ5455|2013-05-17": {
+      "cabin": "H",
+      "op": 1080,
+      "tc": "经济舱",
+      "slowpr": 100000,
+      "bfhipr": 0,
+      "hipr": 0,
+      "wrlen": 21,
+      "shipr": 0,
+      "bfwrlen": 0,
+      "swrlen": 0,
+      "bflowpr": 100000,
+      "lowpr": 794
+    },
+    "CA8206|2013-05-17": {
+      "cabin": "Y",
+      "op": 1080,
+      "tc": "经济舱",
+      "slowpr": 100000,
+      "bfhipr": 0,
+      "hipr": 0,
+      "wrlen": 57,
+      "shipr": 0,
+      "bfwrlen": 0,
+      "swrlen": 0,
+      "bflowpr": 100000,
+      "lowpr": 947
+    },
+    "ZH1476|2013-05-17": {
+      "cabin": "Y",
+      "op": 1080,
+      "tc": "经济舱",
+      "slowpr": 100000,
+      "bfhipr": 0,
+      "hipr": 0,
+      "wrlen": 18,
+      "shipr": 0,
+      "bfwrlen": 0,
+      "swrlen": 0,
+      "bflowpr": 100000,
+      "lowpr": 1003
+    },
+    "MU2451|2013-05-17": {
+      "cabin": "M",
+      "op": 1080,
+      "tc": "经济舱",
+      "slowpr": 100000,
+      "bfhipr": 0,
+      "hipr": 0,
+      "wrlen": 69,
+      "shipr": 0,
+      "bfwrlen": 0,
+      "swrlen": 0,
+      "bflowpr": 100000,
+      "lowpr": 650
+    },
+    "SC1476|2013-05-17": {
+      "cabin": "Y",
+      "op": 1080,
+      "tc": "经济舱",
+      "slowpr": 100000,
+      "bfhipr": 0,
+      "hipr": 0,
+      "wrlen": 17,
+      "shipr": 0,
+      "bfwrlen": 0,
+      "swrlen": 0,
+      "bflowpr": 100000,
+      "lowpr": 1003
+    },
+    "CZ5451|2013-05-17": {
+      "cabin": "G",
+      "op": 1080,
+      "tc": "经济舱",
+      "slowpr": 100000,
+      "bfhipr": 0,
+      "hipr": 0,
+      "wrlen": 21,
+      "shipr": 0,
+      "bfwrlen": 0,
+      "swrlen": 0,
+      "bflowpr": 100000,
+      "lowpr": 702
+    },
+    "CA1476|2013-05-17": {
+      "cabin": "Y",
+      "op": 1080,
+      "tc": "经济舱",
+      "slowpr": 100000,
+      "bfhipr": 0,
+      "hipr": 0,
+      "wrlen": 57,
+      "shipr": 0,
+      "bfwrlen": 0,
+      "swrlen": 0,
+      "bflowpr": 100000,
+      "lowpr": 947
+    },
+    "CA983|2013-05-17": {
+      "cabin": "Y",
+      "op": 1080,
+      "tc": "经济舱",
+      "slowpr": 100000,
+      "bfhipr": 0,
+      "hipr": 0,
+      "wrlen": 55,
+      "shipr": 0,
+      "bfwrlen": 0,
+      "swrlen": 0,
+      "bflowpr": 100000,
+      "lowpr": 947
+    },
+    "MU3093|2013-05-17": {
+      "cabin": "H",
+      "op": 1080,
+      "tc": "经济舱",
+      "slowpr": 100000,
+      "bfhipr": 0,
+      "hipr": 0,
+      "wrlen": 18,
+      "shipr": 0,
+      "bfwrlen": 0,
+      "swrlen": 0,
+      "bflowpr": 100000,
+      "lowpr": 776
+    }
+  },
+  "labelType": "all",
+  "allowOld": false,
+  "flightPriceInfo": {},
+  "queryID": "192.168.0.176:-4815a3f0:13e165d3a17:2086"
+})

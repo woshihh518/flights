@@ -1,0 +1,205 @@
+捐躯赴国难，视死忽如归。恸哭六军俱缟素，冲冠一怒为红颜。君子坦荡荡，小人长戚戚。风日晴和人意好，夕阳箫鼓几船归。民为贵，社稷次之，君为轻。Java 读写json格式的文件方法详解
+文章录入：7747.Net    责任编辑：7747.Net  2837
+	
+
+【字体：小 大】
+一、要解决这个问题首先要知道json格式是什么？
+
+JSON格式：
+比如学生有学号，姓名，性别等。
+用json表示则为：
+{"studno":"11111","studname":"wwww","studsex":"男"}(各个字段都是字符型）
+
+这代表一个学生的信息。
+
+如果多个呢？
+
+[{"studno":"122222","studname":"wwww","studsex":"男"},
+{"studno":"11111","studname":"xxxx","studsex":"男"},
+{"studno":"33333","studname":"ssss","studsex":"男"}]
+
+这就是json格式。
+
+二、那如何操作json格式的文件呢？
+
+这个更简单了，说白了就是直接读写文件，再把读出来的文件内容格式化成json就可以了。
+
+三、具体操作。
+
+1.我有一个实体类，如下：
+
+public class ElectSet {
+public String xueqi;
+public String xuenian;
+public String startTime;
+public String endTime;
+public int menshu;
+public String isReadDB;
+//{"xueqi":,"xuenian":,"startTime":,"endTime":,"renshu":,"isReadDB":}
+public String getXueqi() {
+   return xueqi;
+}
+public void setXueqi(String xueqi) {
+   this.xueqi = xueqi;
+}
+public String getXuenian() {
+   return xuenian;
+}
+public void setXuenian(String xuenian) {
+   this.xuenian = xuenian;
+}
+public String getStartTime() {
+   return startTime;
+}
+public void setStartTime(String startTime) {
+   this.startTime = startTime;
+}
+public String getEndTime() {
+   return endTime;
+}
+public void setEndTime(String endTime) {
+   this.endTime = endTime;
+}
+public int getMenshu() {
+   return menshu;
+}
+public void setMenshu(int menshu) {
+   this.menshu = menshu;
+}
+public String getIsReadDB() {
+   return isReadDB;
+}
+public void setIsReadDB(String isReadDB) {
+   this.isReadDB = isReadDB;
+}
+
+}
+
+2.有一个json格式的文件，存的就是他的信息，如下
+
+Sets.json:
+{"xuenian":"2007-2008","xueqi":"1","startTime":"2009-07-19 08:30","endTime":"2009-07-22 18:00","menshu":"10","isReadDB":"Y"}
+
+3.具体操作.
+/*
+* 取出文件内容，填充对象
+*/
+public ElectSet findElectSet(String path){
+   ElectSet electset=new ElectSet();
+   String sets=ReadFile(path);//获得json文件的内容
+   JSONObject jo=JSONObject.fromObject(sets);//格式化成json对象
+   //System.out.println("------------" jo);
+   //String name = jo.getString("xuenian");
+   //System.out.println(name);
+   electset.setXueqi(jo.getString("xueqi"));
+   electset.setXuenian(jo.getString("xuenian"));
+   electset.setStartTime(jo.getString("startTime"));
+   electset.setEndTime(jo.getString("endTime"));
+   electset.setMenshu(jo.getInt("menshu"));
+   electset.setIsReadDB(jo.getString("isReadDB"));
+   return electset;
+}
+//设置属性，并保存
+public boolean setElect(String path,String sets){
+   try {
+    writeFile(path,sets);
+    return true;
+   } catch (IOException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+    return false;
+   }
+}
+//读文件，返回字符串
+public String ReadFile(String path){
+    File file = new File(path);
+    BufferedReader reader = null;
+    String laststr = "";
+    try {
+     //System.out.println("以行为单位读取文件内容，一次读一整行：");
+     reader = new BufferedReader(new FileReader(file));
+     String tempString = null;
+     int line = 1;
+     //一次读入一行，直到读入null为文件结束
+     while ((tempString = reader.readLine()) != null) {
+      //显示行号
+      System.out.println("line " line ": " tempString);
+      laststr = laststr tempString;
+      line ;
+     }
+     reader.close();
+    } catch (IOException e) {
+     e.printStackTrace();
+    } finally {
+     if (reader != null) {
+      try {
+       reader.close();
+      } catch (IOException e1) {
+      }
+     }
+    }
+    return laststr;
+}
+         //把json格式的字符串写到文件
+public void writeFile(String filePath, String sets) throws IOException {
+    FileWriter fw = new FileWriter(filePath);
+    PrintWriter out = new PrintWriter(fw);
+    out.write(sets);
+    out.println();
+    fw.close();
+    out.close();
+   }
+
+4.调用，使用（在网站的controller里调用的）
+
+//取出json对象
+public void GetElectSettings(HttpServletRequest request,
+    HttpServletResponse response) throws Exception {
+   ElectSet electset=new ElectSet();
+   String absPath = request.getRealPath("\\");
+   String filePath = absPath "public\\sets\\electSets.json";
+   electset=businessService.findElectSets(filePath);//这里是调用，大家自己改改，我调用的业务层的。
+   JSONArray jsonItems = new JSONArray();
+   jsonItems.add(electset);
+   JSONObject jo=new JSONObject();
+   jo.put("data", jsonItems);
+   System.out.println(jo);
+   request.setCharacterEncoding("utf-8");
+   response.setContentType("application/json;charset=utf-8");
+   PrintWriter out = response.getWriter();
+   out.print(jo);
+}
+
+//修改json文件
+public void ChangeElectSet(HttpServletRequest request,
+    HttpServletResponse response) throws Exception {
+   request.setCharacterEncoding("UTF-8");
+   response.setContentType("text/json;charset=utf-8");
+   log.info("reach ChangeElectSet");
+   String json = (String) request.getParameter("json").trim();
+   log.info("Change ElectSet");
+   log.info(json);
+   ElectSet sets = new ElectSet();
+   JSONObject jsonObject = JSONObject.fromObject(json);
+   sets = (ElectSet) JSONObject.toBean(jsonObject, ElectSet.class);
+   if(sets.getIsReadDB()=="false"){
+    sets.setIsReadDB("否");
+   }
+   else{
+    sets.setIsReadDB("是");
+   }
+   String changes="{\"xuenian\":\"";//因为json的属性要用引号，所以要用\"转义一下
+   changes =sets.getXuenian() "\",\"xueqi\":\"" sets.getXueqi() "\",\"startTime\":\"" sets.getStartTime() "\",\"endTime\":\"" sets.getEndTime() "\",\"menshu\":\"" sets.getMenshu() "\",\"isReadDB\":\"" sets.getIsReadDB() "\"}";
+   System.out.println(changes);
+   String absPath = request.getRealPath("\\");
+   String filePath = absPath "public\\sets\\electSets.json";
+   if(businessService.ChangeElectSets(filePath, changes)){
+    log.info("选课设置修改成功");
+    request.setCharacterEncoding("UTF-8");
+    response.setContentType("text/json;charset=utf-8");
+    response.getWriter().write("{success: true}");
+   } else {
+    response.getWriter().write("{errors:'选课设置修改失败，请重新尝试!'}");
+   }
+}
+文章本天成，妙手偶得之。采得百花成蜜后，为谁辛苦为谁甜。衣带渐宽终不悔，为伊消得人憔悴。静如处女，动如脱兔。盛名之下，其实难副。
