@@ -4,10 +4,6 @@ import java.io.IOException;
 import java.net.URLEncoder;
 import java.util.*;
 
-import org.apache.commons.httpclient.*;
-import org.apache.commons.httpclient.methods.GetMethod;
-import org.apache.commons.httpclient.methods.PostMethod;
-import org.apache.commons.httpclient.params.HttpMethodParams;
 import org.json.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -40,28 +36,26 @@ public class GetFlightsInfoQunar extends Thread{
 		String term = " opdate='"+opdate+"'";
 		String logno = opdate+d1.getSeqNo("flight_totalinfo", "LOGNO", 6, term);
 		String optime = pf.getdate("HHmmss", 0);
-		int token = (int)Math.floor(Math.random() * 100000);
 		ht.put("opdate", opdate);
 		ht.put("logno", logno);
 		ht.put("optime", optime);
 		ht.put("da", depCity);
 		ht.put("aa", ArrCity);
 		ht.put("fdate", queryDate);
-		ht.put("token", ""+token);
 		String insSql = d1.getInsertSql("flight_totalinfo", null, ht);
 		System.out.println(insSql);
 		d1.execSql(insSql);
 		logger.info("logno:{} ,info: {}", logno, ht );   
 		 
-		System.out.println("token="+token);
-		//getDynamicFlightInfo(depCity,ArrCity,queryDate,token,logno); 
-		getLongwell(depCity,ArrCity,queryDate,token,logno); 
+		//System.out.println("token="+token);
+		getDynamicFlightInfo(depCity,ArrCity,queryDate,logno); 
+		getLongwell(depCity,ArrCity,queryDate,logno); 
 	}
 	
 	/*
 	 * 取航班的动态信息，包括准点率和航班基本信息
 	 * */
-	public void getDynamicFlightInfo(String depCity,String ArrCity,String queryDate,int token,String logno) {
+	public void getDynamicFlightInfo(String depCity,String ArrCity,String queryDate,String logno) {
 		  
 		  try {
 			  
@@ -76,7 +70,6 @@ public class GetFlightsInfoQunar extends Thread{
 			  urlDynamicFlightInfo=urlDynamicFlightInfo+"&fromCity="+depCityEncode;
 			  urlDynamicFlightInfo=urlDynamicFlightInfo+"&toCity="+ArrCityEncode;
 			  urlDynamicFlightInfo=urlDynamicFlightInfo+"&from="+"fi_ont_search";
-			  urlDynamicFlightInfo=urlDynamicFlightInfo+"&_token="+token;
 			  logger.info("logno:{} ,url: {}", logno, urlDynamicFlightInfo );
 			  String respDynamicFlightInfo=hc.get1(urlDynamicFlightInfo);
 			  logger.info("logno:{} ,resp: {}", logno, pf.delReturn(respDynamicFlightInfo) );
@@ -191,27 +184,25 @@ public class GetFlightsInfoQunar extends Thread{
 	/*
 	 * 取longwell数据，即所有航班信息及价格数据
 	 */
-	public void getLongwell(String depCity,String arrCity,String queryDate,int token,String logno) {
+	public void getLongwell(String depCity,String arrCity,String queryDate,String logno) {
 		  
 		  try {
 			  
 			  //组装 Longwell url
-			  token = (int)Math.floor(Math.random() * 100000);
+			  
 			  String args="";
 			  args=args+"&"+URLEncoder.encode("http://www.travelco.com/searchArrivalAirport",charset)+"="+URLEncoder.encode(arrCity,charset);
 			  args=args+"&"+URLEncoder.encode("http://www.travelco.com/searchDepartureAirport",charset)+"="+URLEncoder.encode(depCity,charset);
 			  args=args+"&"+URLEncoder.encode("http://www.travelco.com/searchDepartureTime",charset)+"="+queryDate;
 			  args=args+"&"+URLEncoder.encode("http://www.travelco.com/searchReturnTime",charset)+"="+queryDate;
 			  args=args+"&locale=zh&nextNDays=0&searchLangs=zh&searchType=OneWayFlight&tags=1&from=fi_ont_search";
-			  args=args+"&_token="+token;
-			  //args=URLEncoder.encode(args,charset);
 			  System.out.println(args);
 			  String urlLongwell="http://flight.qunar.com/twell/longwell?"+args;
 			  logger.info("logno:{} ,urlLongwell: {}", logno, urlLongwell );
 			  String respLongwell=hc.get1(urlLongwell);
 			  //logger.info("logno:{} ,respLongwell: {}", logno, pf.delReturn(respLongwell) );
 			  respLongwell=preDealResp(respLongwell.trim());
-			  System.out.println(respLongwell);
+			  //System.out.println(respLongwell);
 			  JSONObject rootObject = new JSONObject(respLongwell.trim());
 			  //Jsontest jt =new Jsontest();
 			  //jt.test(respLongwell.trim());
@@ -226,9 +217,6 @@ public class GetFlightsInfoQunar extends Thread{
 			  }
 			  logger.info("logno:{} ,priceInfo: {}", logno, priceInfo );
 			  //组装groupdata url
-			  int token1 = (int)Math.floor(Math.random() * 100000);
-			  int token2 = (int)Math.floor(Math.random() * 100000);
-			  int token3 = (int)Math.floor(Math.random() * 100000);  
 			  String queryID = rootObject.getString("queryID");
 			  logger.info("logno:{} ,queryID: {}", logno, queryID );
 			  queryID=getQueryId(queryID);
@@ -245,20 +233,21 @@ public class GetFlightsInfoQunar extends Thread{
 			  groupdataArgs=groupdataArgs+"&queryID="+URLEncoder.encode(queryID,charset);
 			  groupdataArgs=groupdataArgs+"&serverIP="+URLEncoder.encode(serverIP,charset);
 			  groupdataArgs=groupdataArgs+"&status="+URLEncoder.encode(status,charset);
-			  //groupdataArgs=groupdataArgs+"&_token="+token;
 			  System.out.println(groupdataArgs);
-			  String urlOneWayFlight_Info="http://flight.qunar.com/twell/flight/OneWayFlight_Info.jsp?"+groupdataArgs+"&_token="+token1;
-			  String urlGroupdata="http://flight.qunar.com/twell/flight/tags/onewayflight_groupdata.jsp?"+groupdataArgs+"&_token="+token2;
-			  String urlDeduceGroupdata="http://flight.qunar.com/twell/flight/tags/deduceonewayflight_groupdata.jsp?"+groupdataArgs+"&_token="+token3;
+			  String urlOneWayFlight_Info="http://flight.qunar.com/twell/flight/OneWayFlight_Info.jsp?"+groupdataArgs;
+			  String urlGroupdata="http://flight.qunar.com/twell/flight/tags/onewayflight_groupdata.jsp?"+groupdataArgs;
+			  String urlDeduceGroupdata="http://flight.qunar.com/twell/flight/tags/deduceonewayflight_groupdata.jsp?"+groupdataArgs;
 			  logger.info("logno:{} ,urlOneWayFlight_Info: {}", logno, urlOneWayFlight_Info );
 			  sleep(5000);
 			  String respOneWayFlight_Info=hc.get1(urlOneWayFlight_Info);
 			  logger.info("logno:{} ,respOneWayFlight_Info: {}", logno, pf.delReturn(respOneWayFlight_Info) );
-			  sleep(1000);
-			  /*logger.info("logno:{} ,urlDeduceGroupdata: {}", logno, urlDeduceGroupdata );
+			  respOneWayFlight_Info=preDealResp(respOneWayFlight_Info.trim());
+			  sleep(3000);
+			  logger.info("logno:{} ,urlDeduceGroupdata: {}", logno, urlDeduceGroupdata );
 			  String respDeduceGroupdata=hc.get1(urlDeduceGroupdata);
-			  logger.info("logno:{} ,resp: {}", logno, pf.delReturn(respDeduceGroupdata) );
-			  */
+			  logger.info("logno:{} ,respDeduceGroupdata: {}", logno, pf.delReturn(respDeduceGroupdata) );
+			  respDeduceGroupdata=preDealResp(respDeduceGroupdata.trim());
+			  
 			  String dataCompleted = "false";
 			  int querytimes=0;
 			  while(!dataCompleted.equals("true"))
@@ -268,14 +257,41 @@ public class GetFlightsInfoQunar extends Thread{
 				  if(querytimes>10)break;
 				  logger.info("logno:{} ,urlGroupdata: {}", logno, urlGroupdata );
 				  String respGroupdata=hc.get1(urlGroupdata);
-				  logger.info("logno:{} ,resp: {}", logno, pf.delReturn(respGroupdata) );
+				  logger.info("logno:{} ,respGroupdata: {}", logno, pf.delReturn(respGroupdata) );
+				  respGroupdata=preDealResp(respGroupdata.trim());
 				  JSONObject groupdataObject = new JSONObject(respGroupdata.trim());
-				  JSONObject groupdataOneway_data = (JSONObject)groupdataObject.get("oneway_data");
-				  dataCompleted = groupdataOneway_data.getString("dataCompleted").trim();
+				  dataCompleted = groupdataObject.getString("dataCompleted").trim();
 				  System.out.println("dataCompleted:"+dataCompleted);
 				  break;
 				  
 			  }
+			  
+			  
+			  
+			  //corrInfo.
+			  //getCorrInfo(depCity,ArrCity,queryDate,corrInfo,logno);
+			  //getExtInfo(depCity,ArrCity,queryDate,extInfo,logno);
+			  
+		   
+		  } catch (Exception e) {
+		   e.printStackTrace();
+		  } 
+		  	finally {
+		  }
+	}
+	
+	public void testGroupdata()
+	{
+		
+		  
+		  try {
+			  
+			  String logno="xxxxx";
+			  String urlGroupdata="http://flight.qunar.com/twell/flight/tags/onewayflight_groupdata.jsp?&departureCity=%E6%AD%A6%E6%B1%89&arrivalCity=%E5%8C%97%E4%BA%AC&departureDate=2013-05-17&returnDate=2013-05-17&nextNDays=0&searchType=OneWayFlight&searchLangs=zh&locale=zh&from=fi_ont_search&queryID=192.168.25.46%3A10dd148d%3A13e20fbaae2%3A-5243&serverIP=l-tw58.f.cn1%2F192.168.25.46&status=1366353224802&_token=25801";
+			  logger.info("logno:{} ,urlGroupdata: {}", logno, urlGroupdata );
+			  String respGroupdata=hc.get1(urlGroupdata);
+			  logger.info("logno:{} ,resp: {}", logno, pf.delReturn(respGroupdata) );
+			  
 			  
 			  
 			  

@@ -6,10 +6,94 @@
   <meta name="Author" content="">
   <meta name="Keywords" content="">
   <meta name="Description" content="">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="pragma" content="no-cache">
+  <meta http-equiv="cache-control" content="no-cache">
  </head>
-<script type="text/javascript" src="./v4_oneway_main.js"></script>
-<script type="text/javascript" src="./v4_oneway_list.js"></script>
+<script type="text/javascript" src="./jex.js"></script>
 <script >
+function myFunction1()
+{
+  var o = "http://flight.qunar.com";
+  this.param = {};
+  this.oparam = {};
+    
+  var k = null;
+  var D = {
+            "http://www.travelco.com/searchArrivalAirport": "武汉",
+            "http://www.travelco.com/searchDepartureAirport": "北京",
+            "http://www.travelco.com/searchDepartureTime": "2013-05-12",
+            "http://www.travelco.com/searchReturnTime": "2013-05-12",
+            locale: "zh",
+            nextNDays: "0",
+            searchLangs: "zh",
+            searchType: "OneWayFlight",
+            tags: 1
+        };
+        $jex.merge(D, this.oparam);
+        $jex.merge(k, this.oparam);
+        var B = o + "/twell/longwell";
+        $jex.ajax(B, D, 
+        function(H) {  
+            //$jex.event.trigger(p, "getQueryId", H);
+            var H1=getQueryId(H);
+            alert(H1);
+            w = H;
+            k.queryID = H.queryID;
+            k.serverIP = H.serverIP;
+            
+            //$jex.event.trigger(p, "loadedLongwell", H);
+            var F = H.oneway_data || {};
+            setTimeout(function() {
+                k.deduce = true;
+                m = 1;
+            },
+            8000);
+            if (!$jex.$empty(F.priceInfo)) {
+            //    p._process_oneway(F);
+            } else {
+            //    $jex.event.trigger(p, "noOnewayData");
+            //    p.queryNext();
+            }
+        },
+        {
+            //onerror: p._onerror
+        });
+  var D1={
+            departureCity: "武汉",
+            arrivalCity: "北京",
+            departureDate: "2013-05-12",
+            returnDate: "2013-05-12",
+            nextNDays: "0",
+            searchType: "OneWayFlight",
+            searchLangs: "zh",
+            locale: "zh",
+            status: 1366332539462,
+            serverIP: "l-tw58.f.cn1/192.168.25.46",
+            queryID: "192.168.25.46:f975.;4:4gccg2f42;e952ee12"
+        };
+  //alert($jex.toQueryString(D));
+  //var x=document.getElementById("xx");
+  //x.value=$jex.toQueryString(D);
+  
+}
+function getQueryId(L) {
+        if (!L.serc) {
+            return;
+        }
+        var N = L.queryID;
+        var K = N.indexOf(":");
+        var M = N.substr(0, K + 1);
+        var J = N.substring(K + 1).split("");
+        var I = [];
+        $jex.array.each(J, 
+        function(O) {
+            I.push(String.fromCharCode(O.charCodeAt(0) - 1));
+        });
+        I.reverse();
+        L.queryID = M + I.join("");
+        return L;
+    }
 function myFunction()
 {
 x=document.getElementById("demo"); // 找到元素
@@ -43,11 +127,15 @@ var N = "192.168.0.101:6b78.;9c8718c2f42;c8c5g223.";
 
 <p id="demo">
 JavaScript 能改变 HTML 元素的样式。
+<input type=text id='xx1'/>
+<input type=text id='xx2'/>
+<input type=text id='xx3'/>
+<input type=text id='xx4'/>
 </p>
 
 
 
-<button type="button" onclick="myFunction()">点击这里</button>
+<button type="button" onclick="myFunction1()">点击这里</button>
 
  </body>
 </html>

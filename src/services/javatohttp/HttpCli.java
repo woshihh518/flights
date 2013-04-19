@@ -1,110 +1,166 @@
 package services.javatohttp;
 
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
-import org.apache.commons.httpclient.*;
-import org.apache.commons.httpclient.methods.GetMethod;
-import org.apache.commons.httpclient.methods.PostMethod;
-import org.apache.commons.httpclient.params.HttpMethodParams;
 
-import services.db.ReadCFG;
+import org.apache.http.*;
+import org.apache.http.client.ClientProtocolException;
+import org.apache.http.client.entity.UrlEncodedFormEntity;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.message.BasicNameValuePair;
+import org.apache.http.protocol.HTTP;
+import org.apache.http.util.EntityUtils;
+import org.apache.http.params.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-public class HttpCli {
-	private static ReadCFG cfg = new ReadCFG();
-	private static String charset = cfg.getvalue("charset");
-	
-	
+
+public final class HttpCli {
+	final public Logger logger = LoggerFactory.getLogger(this.getClass()); 
+	private static String sessionId="";
+
+	/**
+	 * 执行一个HTTP GET请求，返回请求响应的HTML
+	 * 
+	 * @param url
+	 *            请求的URL地址
+	 * @param queryString
+	 *            请求的查询参数,可以为null
+	 * @return 返回请求响应的HTML
+	 */
 	public  String get1(String url) {
-		  String resp="";
-		  //构造HttpClient的实例
-		  HttpClient httpClient = new HttpClient();
-		  //创建GET方法的实例
-		  //GetMethod getMethod = new GetMethod("http://www.ceair.com/mu/front/reservation/flight-search!doFlightSearch.shtml?cond.tripType=OW&cond.depCode=WUH&cond.depDate=2013-03-13&cond.arrCode=PEK&cond.arrDate=2013-03-13&cond.depCodeInt=&cond.arrCodeInt=&cond.depDateInt=2013-03-13&cond.depCodeIntRt=&cond.arrCodeIntRt=&cond.depDateIntRt=2013-03-13&cond.cabinRank=ECONOMY&cond.adultNumber=1&cond.childNumber=0&cond.sortType=1&cond.isInternationalFlight=331&cond.region=CN");
-		  //GetMethod getMethod = new GetMethod("http://flight.qunar.com/twell/longwell?&http%3A%2F%2Fwww.travelco.com%2FsearchArrivalAirport=%E6%AD%A6%E6%B1%89&http%3A%2F%2Fwww.travelco.com%2FsearchDepartureAirport=%E5%8C%97%E4%BA%AC&http%3A%2F%2Fwww.travelco.com%2FsearchDepartureTime=2013-03-31&http%3A%2F%2Fwww.travelco.com%2FsearchReturnTime=2013-03-31&locale=zh&nextNDays=0&searchLangs=zh&searchType=OneWayFlight&tags=1&from=fi_ont_search&_token=42747");
-		  
-		  System.out.println(url);
-		  GetMethod getMethod = new GetMethod(url);
-		  //使用系统提供的默认的恢复策略
-		  getMethod.getParams().setParameter(HttpMethodParams.RETRY_HANDLER,
-		    new DefaultHttpMethodRetryHandler());
-		  try {
-		   //执行getMethod
-		   int statusCode = httpClient.executeMethod(getMethod);
-		   if (statusCode != HttpStatus.SC_OK) {
-		    System.err.println("Method failed: "
-		      + getMethod.getStatusLine());
-		   }
-		   //读取内容 
-		   byte[] responseBody = getMethod.getResponseBody();
-		   //处理内容
-		   resp = new String(responseBody,charset);
-		   //System.out.println(new String(responseBody,charset));
-		  } catch (HttpException e) {
-		   //发生致命的异常，可能是协议不对或者返回的内容有问题
-		   System.out.println("Please check your provided http address!");
-		   e.printStackTrace();
-		  } catch (IOException e) {
-		   //发生网络异常
-		   e.printStackTrace();
-		  } catch (Exception e) {
-			  e.printStackTrace();
-		  } finally {
-		   //释放连接
-		   getMethod.releaseConnection();
-		   System.out.println("getMethod released");
-		   //
-		  }
-		  return resp;
-		 }
-	
-	public  static void post1(String url) {
-		  //构造HttpClient的实例
-		  HttpClient httpClient = new HttpClient();
-		  //String url = "http://flight.mangocity.com/flights-search.shtml";
-		  PostMethod postMethod = new PostMethod(url);
-		  //GetMethod getMethod = new GetMethod("http://flight.mangocity.com/oneway-Cheapest.shtml?
-		  //id_dpt=WUH&id_arr=PEK&startDate=2013-03-31&id_lineType1=ow");
-		  
-		  try {
-		  // 填入各个表单域的值
-		  NameValuePair[] data = { new NameValuePair("id_dpt", "WUH"),new NameValuePair("id_arr", "PEK"),				
-		  new NameValuePair("startDate", "2013-03-31"),new NameValuePair("id_lineType1", "ow") };
-		  // 将表单的值放入postMethod中
-		  postMethod.setRequestBody(data);
-		  // 执行postMethod
-		  int statusCode = httpClient.executeMethod(postMethod);
-		  // HttpClient对于要求接受后继服务的请求，象POST和PUT等不能自动处理转发
-		  // 301或者302
-		  System.out.println("statusCode:" + statusCode);
-		  if (statusCode == HttpStatus.SC_MOVED_PERMANENTLY || 
-		  statusCode == HttpStatus.SC_MOVED_TEMPORARILY) {
-		      // 从头中取出转向的地址
-		      Header locationHeader = postMethod.getResponseHeader("location");
-		      String location = null;
-		      if (locationHeader != null) {
-		       location = locationHeader.getValue();
-		       System.out.println("The page was redirected to:" + location);
-		      } else {
-		       System.err.println("Location field value is null.");
-		      }
-		      return;
-		  }
-		//读取内容 
-		   byte[] responseBody = postMethod.getResponseBody();
-		   //处理内容
-		   System.out.println(new String(responseBody,"UTF-8"));
-		  } catch (HttpException e) {
-			   //发生致命的异常，可能是协议不对或者返回的内容有问题
-			   System.out.println("Please check your provided http address!");
-			   e.printStackTrace();
-			  } catch (IOException e) {
-			   //发生网络异常
-			   e.printStackTrace();
-			  } finally {
-			   //释放连接
-				  postMethod.releaseConnection();
-			  }
-		 }
+		String strResult = null;
+		int token = (int)Math.floor(Math.random() * 100000);
+		/*try {//转码
+			name = URLEncoder.encode(name, "UTF-8");
+			queryString = URLEncoder.encode(queryString, "UTF-8");
+		} catch (UnsupportedEncodingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		String uriAPI = "http://127.0.0.1/html4/login_mobile.php?"
+				+ name
+				+ "="
+				+ queryString;
+				*/
 
+		
+		DefaultHttpClient client = new DefaultHttpClient();
+		HttpGet httpGet = new HttpGet(url+"&_token="+token);
+		HttpResponse httpResponse;
+		
+		try {
+			if (sessionId != null||sessionId!="") {
+                //设置sessionid，把第一次请求的id放在之后要请求的request报文头里
+				httpGet.setHeader("Cookie", sessionId);
+				logger.info(" Cookie: {}",  sessionId );
+				  
+				//System.out.println("sessionid1:"+sessionId);
+			}
+		    client.getParams().setParameter(HttpProtocolParams.HTTP_CONTENT_CHARSET,"UTF-8"); 
+			//httpGet.setHeader( "Connection", "Keep-Alive" );
+			httpResponse = client.execute(httpGet);
+
+
+			if (httpResponse.getStatusLine().getStatusCode() == 200) 
+			{
+				// 第3步：使用getEntity方法获得返回结果
+				strResult = EntityUtils.toString(httpResponse.getEntity());
+				/*HttpEntity entity = httpResponse.getEntity();
+				StringBuffer sb = new StringBuffer();
+				if (entity != null) {
+					InputStream is = entity.getContent();
+					byte[] bytes = new byte[4096];
+					int size = 0;
+					while ((size = is.read(bytes)) > 0) {
+						String str = new String(bytes, 0, size, "UTF-8");
+						sb.append(str);
+					}
+				is.close();
+				}
+				strResult = sb.toString();*/
+				
+				// 去掉返回结果中的"\r"字符，
+				Header[] headers = httpResponse.getHeaders("set-cookie");
+				if (sessionId == null||sessionId.equals(""))
+				{
+				for (int i = 0; i < headers.length; i++) {
+//                  Log.e("sessionid", headers<i>.getValue());
+					System.out.println("headers:"+i+":"+headers[i]);
+                  String value = headers[i].getValue();
+                  
+                  sessionId = value.substring(0, value.indexOf(";"));
+				}
+				}
+				//System.out.println("sessionid2:"+sessionId);
+			}
+		} catch (ClientProtocolException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+
+		return strResult;
+	}
+
+
+	/**
+	 * 执行一个HTTP POST请求，返回请求响应的HTML
+	 * 
+	 * @param url
+	 *            请求的URL地址
+	 * @param params
+	 *            请求的查询参数,可以为null
+	 * @return 返回请求响应的HTML
+	 * @throws IOException
+	 * @throws IllegalStateException
+	 */
+	public static String doPost(String url, Map<String, String> params)
+			throws IllegalStateException, IOException {
+		String strResult = "";
+		DefaultHttpClient httpClient = new DefaultHttpClient();
+		HttpPost post = new HttpPost(url);
+		List<BasicNameValuePair> postData = new ArrayList<BasicNameValuePair>();
+		for (Map.Entry<String, String> entry : params.entrySet()) {
+			postData.add(new BasicNameValuePair(entry.getKey(), entry
+					.getValue()));
+			System.out.print(entry.getValue());
+		}
+		UrlEncodedFormEntity entity = new UrlEncodedFormEntity(postData,HTTP.UTF_8);//过时了?
+		post.setEntity(entity);
+		HttpResponse response = httpClient.execute(post);
+
+
+		// 若状态码为200 ok
+		if (response.getStatusLine().getStatusCode() == 200) {
+			// 取出回应字串
+			strResult = EntityUtils.toString(response.getEntity());
+		}
+		return strResult;
+	}
+
+
+	/*public static void main(String[] args) throws IllegalStateException,
+			IOException {
+		HashMap<String, String> user = new HashMap<String, String>();
+		user.put("username", "admin");
+		user.put("password", "123");
+		String post = doPost("http://127.0.0.1/html4/login_mobile.php", user);
+		String get = get1("http://127.0.0.1/html4/login_mobile.php", "name",
+				"admin");
+		System.out.println("Post:" + post);
+		System.out.println("Get:" + get);
+	}*/
 }
